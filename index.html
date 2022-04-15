@@ -7,6 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-
+    
+    <script>
+        function computerPlay() {
+            const moves = ["Rock", "Paper", "Scissors"];
+            let randomIndex = Math.floor(Math.random() * moves.length);
+            let randomChoice = moves[randomIndex];
+            return randomChoice;
+        }
+    </script>
 </body>
 </html>
