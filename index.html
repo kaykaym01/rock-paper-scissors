@@ -23,6 +23,7 @@
                 ["paper", "rock"]
             ]);
 
+            playerSelection = playerSelection.toLowerCase();
             if (playerSelection == computerSelection){
                 return "Draw!";
             } else if (winningMoves.get(playerSelection) == computerSelection){
