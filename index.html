@@ -10,10 +10,26 @@
     
     <script>
         function computerPlay() {
-            const moves = ["Rock", "Paper", "Scissors"];
+            const moves = ["rock", "paper", "scissors"];
             let randomIndex = Math.floor(Math.random() * moves.length);
             let randomChoice = moves[randomIndex];
             return randomChoice;
+        }
+
+        function playRound(playerSelection, computerSelection){
+            const winningMoves = new Map([
+                ["rock", "scissors"],
+                ["scissors", "paper"],
+                ["paper", "rock"]
+            ]);
+
+            if (playerSelection == computerSelection){
+                return "Draw!";
+            } else if (winningMoves.get(playerSelection) == computerSelection){
+                return `You Win! ${playerSelection} beats ${computerSelection}`;
+            } else {
+                return `You Lose! ${computerSelection} beats ${playerSelection}`;
+            }
         }
     </script>
 </body>
