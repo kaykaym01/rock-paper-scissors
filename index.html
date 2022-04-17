@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
+
+    <h1>Play Rock, Paper, Scissors in the console. Must win 3/5 games to win :)</h1>
     
     <script>
         // method for computer to randomly select rock paper or scissors
@@ -62,15 +64,21 @@
                 let playerMove = prompt("Rock, Paper, or Scissors: ", "");
                 let computerMove = computerPlay();
                 let result = playRound(playerMove, computerMove);
-
                 displayRoundResult(result);
-
-                score += result;
+                if (result == 1){
+                    score++;
+                }
                 console.log("");
             }
-            console.log(`Score: ${score}/5`);
-            let winnerMessage = (score > 0) ? "You win!" : "You lose!"
-            console.log(winnerMessage);
+            displayGameResult(score);
+        }
+
+        // method to read int score and if score >= 3, displays win
+        // else displays loss
+        function displayGameResult(score){
+            console.log(`Game Score: ${score}/5`);
+            let gameResult = (score >= 3) ? "win" : "lose";
+            console.log(`Game Result: You ${gameResult}!`);
         }
 
         game();
