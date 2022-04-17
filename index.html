@@ -9,6 +9,7 @@
 <body>
     
     <script>
+        // method for computer to randomly select rock paper or scissors
         function computerPlay() {
             const moves = ["rock", "paper", "scissors"];
             let randomIndex = Math.floor(Math.random() * moves.length);
@@ -16,6 +17,8 @@
             return randomChoice;
         }
 
+        // method that takes two moves and returns 1 for a win, -1 for
+        // a loss, and 0 for a draw/tie
         function playRound(playerSelection, computerSelection){
             const winningMoves = new Map([
                 ["rock", "scissors"],
@@ -25,13 +28,38 @@
 
             playerSelection = playerSelection.toLowerCase();
             if (playerSelection == computerSelection){
-                return "Draw!";
+                return 0;
             } else if (winningMoves.get(playerSelection) == computerSelection){
-                return `You Win! ${playerSelection} beats ${computerSelection}`;
+                return 1;
             } else {
-                return `You Lose! ${computerSelection} beats ${playerSelection}`;
+                return -1;
             }
         }
+
+        // method that plays 5 rounds between player and computer
+        // and displays results of each round and winner at the end
+        function game(){
+            let score = 0;
+            for (let i = 0; i < 5; i++){
+                let playerMove = prompt("Rock, Paper, or Scissors: ", "");
+                let computerMove = computerPlay();
+                let result = playRound(playerMove, computerMove);
+
+                if (result == 1){
+                    console.log(`Round ${i}: You win`);
+                    score++;
+                } else if (result == -1){
+                    console.log(`Round ${i}: Computer wins`);
+                } else {
+                    console.log(`Round ${i}: Draw`);
+                }
+            }
+            console.log(`Score: ${score}/5`);
+            let winnerMessage = (score > 2) ? "You win!" : "You lose!"
+            console.log(winnerMessage);
+        }
+
+        game();
     </script>
 </body>
 </html>
