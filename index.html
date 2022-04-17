@@ -17,9 +17,12 @@
             return randomChoice;
         }
 
-        // method that takes two moves and returns 1 for a win, -1 for
+        // method that takes two moves, and returns 1 for a win, -1 for
         // a loss, and 0 for a draw/tie
         function playRound(playerSelection, computerSelection){
+            console.log(`You: ${playerSelection}`);
+            console.log(`Computer: ${computerSelection}`);
+
             const winningMoves = new Map([
                 ["rock", "scissors"],
                 ["scissors", "paper"],
@@ -36,6 +39,21 @@
             }
         }
 
+        // method that takes in integer result and if 0, displays draw,
+        // if 1 displays win, and if -1 displays loss
+        function displayRoundResult(result){
+            switch(result){
+                case -1:
+                    console.log("You Lose");
+                    break;
+                case 0: 
+                    console.log("Draw");
+                    break;
+                case 1:
+                    console.log("You Win");
+            }
+        }
+
         // method that plays 5 rounds between player and computer
         // and displays results of each round and winner at the end
         function game(){
@@ -45,17 +63,13 @@
                 let computerMove = computerPlay();
                 let result = playRound(playerMove, computerMove);
 
-                if (result == 1){
-                    console.log(`Round ${i}: You win`);
-                    score++;
-                } else if (result == -1){
-                    console.log(`Round ${i}: Computer wins`);
-                } else {
-                    console.log(`Round ${i}: Draw`);
-                }
+                displayRoundResult(result);
+
+                score += result;
+                console.log("");
             }
             console.log(`Score: ${score}/5`);
-            let winnerMessage = (score > 2) ? "You win!" : "You lose!"
+            let winnerMessage = (score > 0) ? "You win!" : "You lose!"
             console.log(winnerMessage);
         }
 
