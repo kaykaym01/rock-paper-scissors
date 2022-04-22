@@ -6,7 +6,7 @@
     return randomChoice;
 }
 
-// method that takes player move, randomly selects computer move, and returns 1 for a user win, -1 for
+// method that takes click event and player move, randomly selects computer move, and returns 1 for a user win, -1 for
 // a user loss, and 0 for a draw/tie
 function playRound(playerSelection){
     let computerSelection = computerPlay();
@@ -29,6 +29,15 @@ function playRound(playerSelection){
         return -1;
     }
 }
+
+function playGame(e){
+    let playerMove = this.getAttribute("data-value");
+    let roundResult = playRound(playerMove);
+    displayRoundResult(roundResult);
+}
+
+let playButtons = document.querySelectorAll(".playerMove");
+playButtons.forEach(button => button.addEventListener('click', playGame));
 
 // method that takes in integer result and if 0, displays draw,
 // if 1 displays win, and if -1 displays loss
@@ -97,5 +106,3 @@ function displayGameResult(score){
     let gameResult = (score >= 3) ? "win" : "lose";
     console.log(`Game Result: You ${gameResult}!`);
 }
-
-game();
