@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,36 +8,55 @@
     <title>Rock Paper Scissors</title>
     <script src="app.js" defer></script>
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <h1>Play Rock, Paper, Scissors in the console. Must win 3/5 games to win :)</h1>
-    <div class="playerMoves">
-        <div class="playerMoveSel" data-value ="rock">
-            <img src="img/rock-icon.png" alt="rock">
-        </div>
-        <div class="playerMoveSel" data-value ="paper">
-            <img src="img/paper-icon.png" alt="rock">
-        </div>
-        <div class="playerMoveSel" data-value ="scissors">
-            <img src="img/scissor-icon.png" alt="rock">
+    <div class="container">
+        <div class="header">
+            <h1>Rock, Paper, Scissors!</h1>
         </div>
 
-    </div>
+        <div class="gameContent">
+            <div class="roundInfo">
+                <p>Your Move: <span class="userMove"></span></p>
+                <p>Computer Move: <span class="computerMove"></span></p>
+                <p class="roundResult"></p>
+            </div>
 
-    <div class="roundInfo">
-        <p class="userMove"></p>
-        <p class="computerMove"></p>
-        <p class="roundResult"></p>
-    </div>
+            <div class="playerMoves">
+                <div class="playerMoveSel" data-value="rock">
+                    <img src="img/rock-icon.png" alt="rock">
+                </div>
+                <div class="playerMoveSel" data-value="paper">
+                    <img src="img/paper-icon.png" alt="rock">
+                </div>
+                <div class="playerMoveSel" data-value="scissors">
+                    <img src="img/scissor-icon.png" alt="rock">
+                </div>
 
-    <div class="gameInfo">
-        <p>You: <span class="userScore"></span></p>
-        <p>Computer: <span class="computerScore"></span></p>
-        <p class="gameResult"></p>
-    </div>
+            </div>
 
-    <a target="_blank" href="https://icons8.com/icon/41456/hand-scissors">Hand Scissors</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-    <a target="_blank" href="https://icons8.com/icon/10272/hand">Hand</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-    <a target="_blank" href="https://icons8.com/icon/10266/clenched-fist">Clenched Fist</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+            <div class="gameInfo">
+                <div class="scores">
+                    <p>You: <span class="userScore"></span></p>
+                    <p>Computer: <span class="computerScore"></span></p>
+                </div>
+                <p class="gameResult"></p>
+            </div>
+        </div>
+
+        <div class="footer">
+            Created by Kayla M. Check out my <a href="https://github.com/kaykaym01">GitHub</a> for more!
+
+            <a target="_blank" href="https://icons8.com/icon/41456/hand-scissors">Hand Scissors</a> icon by <a
+                target="_blank" href="https://icons8.com">Icons8</a>
+            <a target="_blank" href="https://icons8.com/icon/10272/hand">Hand</a> icon by <a target="_blank"
+                href="https://icons8.com">Icons8</a>
+            <a target="_blank" href="https://icons8.com/icon/10266/clenched-fist">Clenched Fist</a> icon by <a
+                target="_blank" href="https://icons8.com">Icons8</a>
+        </div>
+    </div>
 </body>
+
 </html>

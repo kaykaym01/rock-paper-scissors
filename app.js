@@ -31,10 +31,10 @@ function playRound(userSelection) {
 // method to update text displaying userSelection and computerSelection
 function updateRoundPlay(userSelection, computerSelection){
     let userChoice = document.querySelector(".userMove");
-    userChoice.textContent = `You: ${userSelection}`;
+    userChoice.textContent = `${userSelection}`;
 
     let computerChoice = document.querySelector(".computerMove");
-    computerChoice.textContent = `Computer: ${computerSelection}`;
+    computerChoice.textContent = `${computerSelection}`;
 }
 
 // method to update userScore and computerScore given result of round
