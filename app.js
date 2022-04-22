@@ -46,6 +46,26 @@ function updateScore(result){
     }
 }
 
+// returns true if user score or computer score reaches 5,
+// otherwise returns false
+function isGameOver(){
+    return userScore == 5 || computerScore == 5;
+}
+
+// ends the game by disabling the player buttons, 
+// displaying Game Over and the game winner
+function endGame(){
+    let playButtons = document.querySelectorAll(".playMoveBtn");
+    playButtons.forEach(button => button.disabled = true);
+
+    let gameResult = document.querySelector(".gameResult");
+    gameResult.textContent = "Game Over";
+    gameResult.textContent += "\r\n";
+
+    let winner = userScore > computerScore ? "User" : "Computer";
+    gameResult.textContent += `${winner} wins!`;
+}
+
 // gets the value of user move, plays the round, displays
 // the round play and round result, displays and updates 
 // game score
@@ -55,6 +75,9 @@ function playGame(e) {
     displayRoundResult(roundResult);
     updateScore(roundResult);
     updateGameResult();
+    if (isGameOver()){
+        endGame();
+    }
 }
 
 let userScore = 0;
