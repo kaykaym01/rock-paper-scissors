@@ -6,9 +6,11 @@
     return randomChoice;
 }
 
-// method that takes two moves, and returns 1 for a win, -1 for
-// a loss, and 0 for a draw/tie
-function playRound(playerSelection, computerSelection){
+// method that takes player move, randomly selects computer move, and returns 1 for a user win, -1 for
+// a user loss, and 0 for a draw/tie
+function playRound(playerSelection){
+    let computerSelection = computerPlay();
+
     console.log(`You: ${playerSelection}`);
     console.log(`Computer: ${computerSelection}`);
 
@@ -78,8 +80,7 @@ function game(){
             console.log("Game Cancelled.");
             return;
         }
-        let computerMove = computerPlay();
-        let result = playRound(playerMove, computerMove);
+        let result = playRound(playerMove);
         displayRoundResult(result);
         if (result == 1){
             score++;
