@@ -70,7 +70,7 @@ function endGame(){
 
 // method that adds a reset game button to DOM
 function addResetButton(){
-    let body = document.querySelector("body");
+    let body = document.querySelector(".resultAndReset");
     let resetButton = document.createElement("button");
     resetButton.classList.add("resetBtn");
     resetButton.textContent = "Reset Game";

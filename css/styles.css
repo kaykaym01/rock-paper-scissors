@@ -19,6 +19,14 @@ h1{
 .gameContent{
     flex-grow: 1;
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.gameInfo{
+    display: flex;
+    justify-content: space-between;
 }
 
 .roundInfo{
