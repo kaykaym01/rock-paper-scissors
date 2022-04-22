@@ -70,3 +70,10 @@ h1{
 .credit{
     font-size: 12px;
 }
+
+.resetBtn{
+    background-color: black;
+    color: white;
+    font-family: 'Roboto Mono', monospace, sans-serif;
+    padding: 4px 12px;
+}
