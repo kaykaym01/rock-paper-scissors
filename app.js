@@ -54,31 +54,6 @@ function displayRoundResult(result){
     }
 }
 
-// method that reads in user input until valid input or until user
-//cancels game
-function readAndValidateInput(){
-    let options = ["rock", "paper", "scissors"];
-
-    let userInput = prompt("Rock, Paper, or Scissors. Press escape to cancel.", "");
-    if (userInput == null){
-        alert("game cancelled.");
-        return null;
-    } else if (userInput == ""){
-        alert("empty input. please make a selection.");
-        return readAndValidateInput();
-    } else {
-        userInput = userInput.toLowerCase();
-        if (!options.includes(userInput)){
-            alert("input not a valid option. please make a selection.");
-            return readAndValidateInput();
-        } else {
-            return userInput;
-        }
-    }
-    console.log(userInput);
-}
-
-
 // method that plays 5 rounds between player and computer
 // and displays results of each round and winner at the end
 function game(){
