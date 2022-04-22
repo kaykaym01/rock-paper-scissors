@@ -9,14 +9,20 @@
 </head>
 <body>
     <h1>Play Rock, Paper, Scissors in the console. Must win 3/5 games to win :)</h1>
-    <button class="playerButton" data-value ="rock">ROCK</button>
-    <button class="playerButton" data-value ="paper">PAPER</button>
-    <button class="playerButton" data-value ="scissors">SCISSORS</button>
+    <button class="playMoveBtn" data-value ="rock">ROCK</button>
+    <button class="playMoveBtn" data-value ="paper">PAPER</button>
+    <button class="playMoveBtn" data-value ="scissors">SCISSORS</button>
 
-    <div class="playRound">
-        <p class="playerMove"></p>
+    <div class="roundInfo">
+        <p class="userMove"></p>
         <p class="computerMove"></p>
         <p class="roundResult"></p>
+    </div>
+
+    <div class="gameInfo">
+        <p>You: <span class="userScore"></span></p>
+        <p>Computer: <span class="computerScore"></span></p>
+        <p class="winner"></p>
     </div>
 </body>
 </html>
