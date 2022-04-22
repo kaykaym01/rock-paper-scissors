@@ -9,10 +9,9 @@ function computerPlay() {
 // method that takes click event and player move, randomly selects computer move, and returns 1 for a user win, -1 for
 // a user loss, and 0 for a draw/tie
 function playRound(playerSelection) {
-    let computerSelection = computerPlay();
 
-    console.log(`You: ${playerSelection}`);
-    console.log(`Computer: ${computerSelection}`);
+    let computerSelection = computerPlay();
+    updateRoundPlay(playerSelection, computerSelection);
 
     const winningMoves = new Map([
         ["rock", "scissors"],
@@ -30,28 +29,40 @@ function playRound(playerSelection) {
     }
 }
 
+function updateRoundPlay(playerSelection, computerSelection){
+    let playerChoice = document.querySelector(".playerMove");
+    playerChoice.textContent = `You: ${playerSelection}`;
+
+    let computerChoice = document.querySelector(".computerMove");
+    computerChoice.textContent = `Computer: ${computerSelection}`;
+}
+
 function playGame(e) {
     let playerMove = this.getAttribute("data-value");
     let roundResult = playRound(playerMove);
     displayRoundResult(roundResult);
 }
 
-let playButtons = document.querySelectorAll(".playerMove");
+let playButtons = document.querySelectorAll(".playerButton");
 playButtons.forEach(button => button.addEventListener('click', playGame));
 
 // method that takes in integer result and if 0, displays draw,
 // if 1 displays win, and if -1 displays loss
 function displayRoundResult(result) {
+    let resultText;
     switch (result) {
         case -1:
-            console.log("You Lose");
+            resultText = "You Lose";
             break;
         case 0:
-            console.log("Draw");
+            resultText = "Draw";
             break;
         case 1:
-            console.log("You Win");
+            resultText = "You Win";
     }
+
+    let resultP = document.querySelector(".roundResult");
+    resultP.textContent = resultText;
 }
 
 // method to read int score and if score >= 3, displays win
