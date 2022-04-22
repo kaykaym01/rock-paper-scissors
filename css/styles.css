@@ -77,3 +77,7 @@ h1{
     font-family: 'Roboto Mono', monospace, sans-serif;
     padding: 4px 12px;
 }
+
+a{
+    color:#27F27F;
+}
