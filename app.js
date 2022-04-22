@@ -64,6 +64,35 @@ function endGame(){
 
     let winner = userScore > computerScore ? "User" : "Computer";
     gameResult.textContent += `${winner} wins!`;
+
+    addResetButton();
+}
+
+// method that adds a reset game button to DOM
+function addResetButton(){
+    let body = document.querySelector("body");
+    let resetButton = document.createElement("button");
+    resetButton.classList.add("resetBtn");
+    resetButton.textContent = "Reset Game";
+    resetButton.addEventListener('click', resetGame);
+    body.appendChild(resetButton);
+}
+
+// method that resets score, round results, game results
+// and removes reset button
+function resetGame(e){
+    userScore = 0;
+    computerScore = 0;
+    updateGameResult();
+   document.querySelector(".gameResult").textContent = "";
+   document.querySelector(".userMove").textContent = "";
+   document.querySelector(".computerMove").textContent = "";
+   document.querySelector(".roundResult").textContent = "";
+
+   let playButtons = document.querySelectorAll(".playMoveBtn");
+   playButtons.forEach(button => button.disabled = false);
+   let resetButton = document.querySelector(".resetBtn");
+   resetButton.parentNode.removeChild(resetButton);
 }
 
 // gets the value of user move, plays the round, displays
@@ -107,7 +136,7 @@ function displayRoundResult(result) {
 
 // method to read int score and if score >= 3, displays win
 // else displays loss
-function updateGameResult(score) {
+function updateGameResult() {
     let userScoreText = document.querySelector(".userScore");
     userScoreText.textContent = userScore;
 
