@@ -55,12 +55,8 @@ function isGameOver(){
 // ends the game by disabling the player buttons, 
 // displaying Game Over and the game winner
 function endGame(){
-    let playButtons = document.querySelectorAll(".playMoveBtn");
-    playButtons.forEach(button => button.disabled = true);
-
     let playDivs = document.querySelectorAll(".playerMoveSel");
     playDivs.forEach(div => div.removeEventListener('click', playGame));
-
 
     let gameResult = document.querySelector(".gameResult");
     gameResult.textContent = "Game Over";
@@ -93,8 +89,6 @@ function resetGame(e){
    document.querySelector(".computerMove").textContent = "";
    document.querySelector(".roundResult").textContent = "";
 
-   let playButtons = document.querySelectorAll(".playMoveBtn");
-   playButtons.forEach(button => button.disabled = false);
    let playDivs = document.querySelectorAll(".playerMoveSel");
    playDivs.forEach(div => div.addEventListener('click', playGame));
 
@@ -118,9 +112,6 @@ function playGame(e) {
 
 let userScore = 0;
 let computerScore = 0;
-
-let playButtons = document.querySelectorAll(".playMoveBtn");
-playButtons.forEach(button => button.addEventListener('click', playGame));
 
 let playDivs = document.querySelectorAll(".playerMoveSel");
 playDivs.forEach(div => div.addEventListener('click', playGame));
