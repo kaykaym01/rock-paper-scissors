@@ -6,12 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
     <script src="app.js" defer></script>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <h1>Play Rock, Paper, Scissors in the console. Must win 3/5 games to win :)</h1>
     <button class="playMoveBtn" data-value ="rock">ROCK</button>
     <button class="playMoveBtn" data-value ="paper">PAPER</button>
     <button class="playMoveBtn" data-value ="scissors">SCISSORS</button>
+
+    <div class="playerMoves">
+        <div class="playerMoveSel" data-value ="rock">
+            <img src="img/rock-icon.png" alt="rock">
+        </div>
+        <div class="playerMoveSel" data-value ="paper">
+            <img src="img/paper-icon.png" alt="rock">
+        </div>
+        <div class="playerMoveSel" data-value ="scissors">
+            <img src="img/scissor-icon.png" alt="rock">
+        </div>
+
+    </div>
 
     <div class="roundInfo">
         <p class="userMove"></p>
@@ -24,5 +38,9 @@
         <p>Computer: <span class="computerScore"></span></p>
         <p class="gameResult"></p>
     </div>
+
+    <a target="_blank" href="https://icons8.com/icon/41456/hand-scissors">Hand Scissors</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+    <a target="_blank" href="https://icons8.com/icon/10272/hand">Hand</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+    <a target="_blank" href="https://icons8.com/icon/10266/clenched-fist">Clenched Fist</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 </body>
 </html>

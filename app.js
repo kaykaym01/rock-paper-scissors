@@ -58,6 +58,10 @@ function endGame(){
     let playButtons = document.querySelectorAll(".playMoveBtn");
     playButtons.forEach(button => button.disabled = true);
 
+    let playDivs = document.querySelectorAll(".playerMoveSel");
+    playDivs.forEach(div => div.removeEventListener('click', playGame));
+
+
     let gameResult = document.querySelector(".gameResult");
     gameResult.textContent = "Game Over";
     gameResult.textContent += "\r\n";
@@ -91,6 +95,9 @@ function resetGame(e){
 
    let playButtons = document.querySelectorAll(".playMoveBtn");
    playButtons.forEach(button => button.disabled = false);
+   let playDivs = document.querySelectorAll(".playerMoveSel");
+   playDivs.forEach(div => div.addEventListener('click', playGame));
+
    let resetButton = document.querySelector(".resetBtn");
    resetButton.parentNode.removeChild(resetButton);
 }
@@ -114,6 +121,10 @@ let computerScore = 0;
 
 let playButtons = document.querySelectorAll(".playMoveBtn");
 playButtons.forEach(button => button.addEventListener('click', playGame));
+
+let playDivs = document.querySelectorAll(".playerMoveSel");
+playDivs.forEach(div => div.addEventListener('click', playGame));
+
 
 // method that takes in integer result and if 0, displays draw,
 // if 1 displays win, and if -1 displays loss

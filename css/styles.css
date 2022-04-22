@@ -1,0 +1,15 @@
+.playerMoves{
+    display: flex;
+    justify-content: space-between;
+}
+
+.playerMoveSel {
+    border: solid 2px #27F27F;
+    border-radius: 50%;
+    padding: 20px;
+    pointer-events: fill;
+}
+
+.playerMoveSel:hover {
+    background-color: #8979F2;
+}
