@@ -49,7 +49,7 @@ h1{
     pointer-events: fill;
 }
 
-.playerMoveSel:hover {
+.playerMoveSel_hover:hover {
     background-color: #8979F2;
 }
 
@@ -59,4 +59,14 @@ h1{
     color: white;
     flex-shrink: 0;
     text-align: center;
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.credit{
+    font-size: 12px;
 }

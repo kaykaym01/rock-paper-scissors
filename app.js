@@ -57,6 +57,7 @@ function isGameOver(){
 function endGame(){
     let playDivs = document.querySelectorAll(".playerMoveSel");
     playDivs.forEach(div => div.removeEventListener('click', playGame));
+    playDivs.forEach(div => div.classList.remove("playerMoveSel_hover"));
 
     let gameResult = document.querySelector(".gameResult");
     gameResult.textContent = "Game Over";
@@ -91,6 +92,8 @@ function resetGame(e){
 
    let playDivs = document.querySelectorAll(".playerMoveSel");
    playDivs.forEach(div => div.addEventListener('click', playGame));
+   playDivs.forEach(div => div.classList.add("playerMoveSel_hover"));
+
 
    let resetButton = document.querySelector(".resetBtn");
    resetButton.parentNode.removeChild(resetButton);
