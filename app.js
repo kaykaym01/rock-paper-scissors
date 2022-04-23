@@ -60,11 +60,10 @@ function endGame(){
     playDivs.forEach(div => div.classList.remove("playerMoveSel_hover"));
 
     let gameResult = document.querySelector(".gameResult");
-    gameResult.textContent = "Game Over";
-    gameResult.textContent += "\r\n";
+    gameResult.textContent = "Game Over - ";
 
-    let winner = userScore > computerScore ? "User" : "Computer";
-    gameResult.textContent += `${winner} wins!`;
+    let winner = userScore > computerScore ? "You win!" : "Computer wins!";
+    gameResult.textContent += `${winner}`;
 
     addResetButton();
 }
@@ -88,7 +87,7 @@ function resetGame(e){
    document.querySelector(".gameResult").textContent = "";
    document.querySelector(".userMove").textContent = "";
    document.querySelector(".computerMove").textContent = "";
-   document.querySelector(".roundResult").textContent = "";
+   document.querySelector(".roundResult").textContent = "First to 5 wins!";
 
    let playDivs = document.querySelectorAll(".playerMoveSel");
    playDivs.forEach(div => div.addEventListener('click', playGame));
